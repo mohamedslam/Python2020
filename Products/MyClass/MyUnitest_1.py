@@ -1,4 +1,4 @@
-import unittest
+ 
 import pytest
 import requests
 
@@ -7,24 +7,33 @@ from unittest import TestCase
 import MyClass.ClsDataOperation as opr
 import MyClass.ClsProductModel as ModelProduct
 
-class TryTesting(TestCase):
-    def test_always_passes(self):
-        self.assertTrue(True)
-
-    def test_always_fails(self):
-        self.assertTrue(False)
-
-
+  
 class Test_MyUnitest_1(unittest.TestCase):
-    def test_A(self):
-        self.fail("Not implemented")
-
-    def Add_Test():
-        print("InsertProduct_Test")
-        product=opr.InsertProduct(ProductName="tchirt",ProductType="1",Price="20",Color=1,size=40,tradeMark="Nike")
-        p_type=product.gettype()
-        #assert p_type==opr.
+      
+    def test_InsertProduct():
+      assert opr.InsertProduct(ProductName="tchirt",ProductType="1",Price="20",Color=1,size=40,tradeMark="Nike")
     
+    def test_UpdateProduct():
+      assert opr.UpdateProduct(ProductName="tchirt",ProductType="1",Price="20",Color=1,size=40,tradeMark="Nike")
+
+    def test_DeleteProduct():
+      assert opr.DeleteProduct(Id=3)
+    
+    
+    def test_GetAllProduct():
+      assert opr.GetAllProduct()  
+
+    def test_GetProduct():
+      assert opr.GetProduct(Id=3)
+
+    def test_GetByName():
+      assert opr.GetByName("m")
+
+    def test_Find():
+      assert opr.Find("m")
+
+
+     
 
 
 if __name__ == '__main__':

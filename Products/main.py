@@ -1,9 +1,9 @@
+import pyodbc
 
 import MyClass.ClsDataOperation as opr
 import MyClass.ClsProductModel as ModelProduct
-
 from enum import Enum, unique
- 
+
 @unique
 class Operation(Enum):
     GetAll = 1
@@ -12,15 +12,31 @@ class Operation(Enum):
     Find = 4
     Update= 5
     Delete=6
- 
- 
+class Color(Enum):
+    white=1, 
+    red =2,
+    green =3,
+    yellow =4,
+    blue =5,
+    black =6,
+    brown =7,
+    grey =8,
+    silver =9,
+    golden =10,
+    orange =11,
+    pink =12,
+    Milky=13,
+
 if __name__ == '__main__':
  model=ModelProduct
-
-print("WellCome to CSU Shop")
-print("<<1 GetAll>> <<2 GetById>> <<3 GetByName>> <<4 Find>> <<5 AddNew>> <<6 Update>> <<7 Delete>> EmptyLine To Close")
-
-while True:
+print("----------------- *************** -------------------------------------")
+print(" WellCome to CSU  | Shop Student|    мивт 101 Student :Sallam Mohamed |")
+print("----------------- *************** -------------------------------------")
+try:
+ while True:
+    print("=========================================================================================================")
+    print("Press>> 1 GetAll | 2 GetById | 3 GetByName | 4 Find | 5 AddNew | 6 Update | 7 Delete | Any To Close")
+    print("---------------------------------------------------------------------------------------------------------")
     line = input()
     if line=="1":
        print("Get All Product In DataBase\n")    
@@ -53,18 +69,20 @@ while True:
             opr.InsertProduct(model)
         elif line=="6":
             opr.UpdateProduct(model) 
+        print('Save Succefully')
     elif line=="7":
        print("To DeletedProduct You Need To Insert Product Id First\n")
        id=input("Id:")
        opr.DeleteProduct(id)
-    else:
-        print("\n")
-        print("Good Bay")
-        break
- 
-
- 
-
+    elif line=="11":         
+         import os
+         os.system('cls||clear')
+    else:        
+        print("\nGood Bay")
+        break 
+except pyodbc.Error as ex:
+        sqlstate = ex.args[0]       
+        print(sqlstate)
  
  
  

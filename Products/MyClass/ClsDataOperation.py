@@ -27,6 +27,7 @@ def ExecuteData(sql):
    cursor.execute(sql)
    con.commit()
    del con 
+    
 def GetAllProduct():     
   rst=print(GetData("Select * from Products"))
   return rst;
@@ -42,17 +43,11 @@ def Find(StrValue):
 def DeleteProduct(Id):
    rst= ExecuteData("Delete from Products where Id="+Id) 
    return rst;
-def InsertProduct(ProductName, ProductType, Price, Color, size, TradeMark):
-  Sql="Insert into Products (ProductName, ProductType, Price, Color, size, TradeMark) Values('"+ProductName    +"', '"+ProductType     +"', '"+Price    +"', '"+Color   +"', '"+size     +"', '"+TradeMark+"')"  
-  ExecuteData(Sql)
+
 def InsertProduct(model):
   model=ModelProduct
   Sql="Insert into Products (ProductName, ProductType, Price, Color, size, TradeMark) Values('"+model.ProductName    +"', '"+model.ProductType     +"', '"+model.Price    +"', '"+model.Color   +"', '"+ model.size     +"', '"+model.TradeMark+"')"  
   ExecuteData(Sql)
-
-def UpdateProduct(Id,ProductName, ProductType, Price, Color, size, TradeMark):
- Sql="Update Products Set " +"ProductName='"+ProductName +"', ProductType='"+ProductType +"', Price='"+Price +"', Color='"+Color +"', size='"+size +"', TradeMark='"+TradeMark +"'  where Id="+Id
- ExecuteData(Sql)
 
 def UpdateProduct(model):
   model=ModelProduct
