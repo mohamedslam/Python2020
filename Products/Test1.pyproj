@@ -25,16 +25,28 @@
     <Compile Include="MyClass\ClsDataOperation.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MyClass\ClsProductModel.py">
+    <Compile Include="MyClass\InvoiceSalesModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MyClass\ProductModel.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="main.py" />
+    <Compile Include="MyClass\InvoiceDetailsModel.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MyClass\MyUnitest_1.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MyClass\" />
+    <Folder Include="html\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="html\Index.html" />
+    <Content Include="html\Products.html" />
+    <Content Include="html\Reports.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

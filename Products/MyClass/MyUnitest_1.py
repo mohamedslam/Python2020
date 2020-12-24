@@ -5,7 +5,7 @@ import requests
 from unittest import TestCase
 
 import MyClass.ClsDataOperation as opr
-import MyClass.ClsProductModel as ModelProduct
+import MyClass.ProductModel as ModelProduct
 
   
 class Test_MyUnitest_1(unittest.TestCase):
@@ -17,8 +17,7 @@ class Test_MyUnitest_1(unittest.TestCase):
       assert opr.UpdateProduct(ProductName="tchirt",ProductType="1",Price="20",Color=1,size=40,tradeMark="Nike")
 
     def test_DeleteProduct():
-      assert opr.DeleteProduct(Id=3)
-    
+      assert opr.DeleteProduct(Id=3)    
     
     def test_GetAllProduct():
       assert opr.GetAllProduct()  
@@ -34,7 +33,4 @@ class Test_MyUnitest_1(unittest.TestCase):
 
 
      
-
-
-if __name__ == '__main__':
-    unittest.main()
+ 
